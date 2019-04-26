@@ -1,6 +1,5 @@
-import UiButton from './button'
-import '@/styles/index.scss'
 
-export default {
-  UiButton
-}
+
+export { default as UiButton } from './button';
+
+import '@/styles/index.scss'
