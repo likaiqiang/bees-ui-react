@@ -28,14 +28,44 @@ module.exports = {
       },
       {
         test: /\.js$/,
-        use:{
+        use: {
           loader: 'babel-loader',
           options: {
-            presets: ['@babel/preset-env','@babel/preset-react']
+            presets: ['@babel/preset-env', '@babel/preset-react']
           }
         }
+      },
+      {
+        test: /\.(png|jpg|gif)/,
+        use: [
+          {
+            loader:'url-loader',
+            options:{
+              limit: 8192,
+              name: 'resource/[name].[ext]'
+            }
+          }
+        ]
+      },
+      {
+        test: /\.(eot|svg|ttf|woff2|woff|otf)/,
+        use: [
+          {
+            loader:'url-loader',
+            options:{
+              limit: 8192,
+              name: 'resource/[name].[ext]'
+            }
+          }
+        ]
       }
     ],
+  },
+  resolve: {
+    extensions: ['.js', '.json'],
+    alias: {
+      '@': path.resolve(__dirname, 'src')
+    }
   },
   plugins: [
     new MiniCssExtractPlugin({
