@@ -8,7 +8,7 @@ class App extends Component{
   }
   render(){
     return (
-      <UiButton>demo</UiButton>
+      <UiButton type="primary" loading={true}>demo</UiButton>
     )
   }
 }
