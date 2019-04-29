@@ -8,6 +8,9 @@
     "build": "webpack --mode development --config ./webpack.config.build.js",
     "test": "jest --config .jest.js"
   },
+  "jest": {
+    "setupTestFrameworkScriptFile": "./tests/setup.js" 
+  },
   "keywords": [],
   "author": "",
   "license": "ISC",
